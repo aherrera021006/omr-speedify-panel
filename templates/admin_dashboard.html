@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Panel Admin</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th><th>Usuario</th><th>Administrador</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ 'Sí' if user.is_admin else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
